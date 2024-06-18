@@ -33,8 +33,7 @@ environment:
   NPM_CONFIG_UPDATE_NOTIFIER: false
 
 entrypoint:
-  command: tini --
-cmd: /usr/local/bin/renovate
+  command: tini -- /usr/local/bin/renovate
 
 # By convention, the official Docker node image defines a `node` user, but
 # doesn't run as it unless the image based on it specifies that user.
