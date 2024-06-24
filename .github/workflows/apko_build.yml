@@ -30,6 +30,13 @@ jobs:
       packages: write
       attestations: write
     steps:
+      - id: renovate_version
+        uses: pozetroninc/github-action-get-latest-release@master
+        with:
+          repository: renovatebot/renovate/
+          excludes: prerelease, draft
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -42,4 +49,4 @@ jobs:
           config: wolfi-renovate-tini-git-flux-22.yaml
           # Tag is the tag that will be published.
           # Required.
-          tag: ghcr.io/kastl-ars/wolfi-renovate-tini-git-flux:latest ghcr.io/kastl-ars/wolfi-renovate-tini-git-flux:22
+          tag: ghcr.io/kastl-ars/wolfi-renovate-tini-git-flux:latest ghcr.io/kastl-ars/wolfi-renovate-tini-git-flux:22 ghcr.io/kastl-ars/wolfi-renovate-tini-git-flux:${{ steps.renovate_version.outputs.release }}
