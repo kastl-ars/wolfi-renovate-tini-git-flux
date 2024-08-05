@@ -41,12 +41,12 @@ jobs:
         uses: actions/checkout@v4
 
       # https://github.com/chainguard-images/actions/tree/main/apko-publish
-      - id: wolfi-renovate-tini-git-flux-22
+      - id: wolfi-renovate-tini-git-flux
         uses: distroless/actions/apko-publish@main
         with:
           # Config is the configuration file to use for the image build.
           # Optional, will use .apko.yaml without a defined one.
-          config: wolfi-renovate-tini-git-flux-22.yaml
+          config: wolfi-renovate-tini-git-flux.yaml
           # Tag is the tag that will be published.
           # Required.
-          tag: ghcr.io/kastl-ars/wolfi-renovate-tini-git-flux:latest ghcr.io/kastl-ars/wolfi-renovate-tini-git-flux:22 ghcr.io/kastl-ars/wolfi-renovate-tini-git-flux:${{ steps.renovate_version.outputs.release }}
+          tag: ghcr.io/kastl-ars/wolfi-renovate-tini-git-flux:latest ghcr.io/kastl-ars/wolfi-renovate-tini-git-flux:${{ steps.renovate_version.outputs.release }}
