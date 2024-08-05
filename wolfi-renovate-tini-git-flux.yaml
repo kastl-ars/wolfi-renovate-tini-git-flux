@@ -13,7 +13,6 @@ contents:
     - gnupg
     - gpg
     - gpg-agent
-    - nodejs-22
     - renovate
     - tini
 
